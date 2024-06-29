@@ -33,7 +33,7 @@ export function LandingPage() {
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Earn Rewards by Staking Your Solana NFTs
                   </h1>
-                  <p className="text-muted-foreground max-w-[600px] md:text-xl">
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
                     Our Solana NFT staking platform allows you to earn passive
                     income by staking your valuable NFTs. Enjoy the benefits of
                     decentralized finance while keeping your assets secure.
@@ -41,8 +41,8 @@ export function LandingPage() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link
-                    href="/stake"
-                    className="focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-[#00FFA3] px-8 text-sm font-medium text-[#0D1117] shadow transition-colors hover:bg-[#00FFA3]/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
+                    href="https://app.stakify.me"
+                    className="inline-flex h-10 items-center justify-center rounded-md bg-[#00FFA3] px-8 text-sm font-medium text-[#0D1117] shadow transition-colors hover:bg-[#00FFA3]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}
                   >
                     Start Staking
@@ -50,7 +50,7 @@ export function LandingPage() {
                   <Link
                     href="https://discord.gg/bVShvrgsg8"
                     target="_blank"
-                    className="border-input bg-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md border px-8 text-sm font-medium shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
+                    className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   >
                     Learn More
                   </Link>
@@ -76,7 +76,7 @@ export function LandingPage() {
                 <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl">
                   How It Works
                 </h2>
-                <p className="text-muted-foreground max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Our Solana NFT staking platform makes it easy to earn rewards.
                   Simply connect your wallet, select the NFTs you want to stake,
                   and start earning passive income.
