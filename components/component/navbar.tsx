@@ -5,12 +5,6 @@ import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import dynamic from "next/dynamic";
 
-const WalletMultiButton = dynamic(
-  async () =>
-    (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
-  { ssr: false },
-);
-
 export function Navbar() {
   return (
     <header className="flex h-24 items-center px-4 lg:px-6">
@@ -32,7 +26,6 @@ export function Navbar() {
         >
           Contact
         </Link>
-        <WalletMultiButton />
         <ModeToggle />
       </nav>
     </header>

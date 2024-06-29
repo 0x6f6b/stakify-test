@@ -28,9 +28,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(cal.variable, inter.variable)}>
         <Providers>
-          <Navbar />
           {children}
-          <Footer />
           <Analytics />
         </Providers>
       </body>
