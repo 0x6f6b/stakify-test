@@ -24,6 +24,11 @@ export default function SiteSettingsNav() {
       href: `/site/${id}/settings/appearance`,
       segment: "appearance",
     },
+    {
+      name: "Staking",
+      href: `/site/${id}/settings/staking`,
+      segment: "staking",
+    },
   ];
 
   return (

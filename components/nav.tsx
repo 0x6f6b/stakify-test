@@ -1,42 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowLeft,
-  BarChart3,
-  Edit3,
-  Globe,
-  Layout,
-  LayoutDashboard,
-  Megaphone,
-  Menu,
-  Newspaper,
-  Settings,
-  FileCode,
-  Github,
-} from "lucide-react";
+import { ArrowLeft, Globe, Menu, Settings } from "lucide-react";
 import {
   useParams,
   usePathname,
   useSelectedLayoutSegments,
 } from "next/navigation";
 import { ReactNode, useEffect, useMemo, useState } from "react";
-import { getSiteFromPostId } from "@/lib/actions";
 import Image from "next/image";
 
 export default function Nav({ children }: { children: ReactNode }) {
   const segments = useSelectedLayoutSegments();
   const { id } = useParams() as { id?: string };
-
-  const [siteId, setSiteId] = useState<string | null>();
-
-  useEffect(() => {
-    if (segments[0] === "post" && id) {
-      getSiteFromPostId(id).then((id) => {
-        setSiteId(id);
-      });
-    }
-  }, [segments, id]);
 
   const tabs = useMemo(() => {
     if (segments[0] === "site" && id) {
@@ -47,34 +23,8 @@ export default function Nav({ children }: { children: ReactNode }) {
           icon: <ArrowLeft width={18} />,
         },
         {
-          name: "Posts",
-          href: `/site/${id}`,
-          isActive: segments.length === 2,
-          icon: <Newspaper width={18} />,
-        },
-        {
           name: "Settings",
           href: `/site/${id}/settings`,
-          isActive: segments.includes("settings"),
-          icon: <Settings width={18} />,
-        },
-      ];
-    } else if (segments[0] === "post" && id) {
-      return [
-        {
-          name: "Back to All Posts",
-          href: siteId ? `/site/${siteId}` : "/sites",
-          icon: <ArrowLeft width={18} />,
-        },
-        {
-          name: "Editor",
-          href: `/post/${id}`,
-          isActive: segments.length === 2,
-          icon: <Edit3 width={18} />,
-        },
-        {
-          name: "Settings",
-          href: `/post/${id}/settings`,
           isActive: segments.includes("settings"),
           icon: <Settings width={18} />,
         },
@@ -94,7 +44,7 @@ export default function Nav({ children }: { children: ReactNode }) {
         icon: <Settings width={18} />,
       },
     ];
-  }, [segments, id, siteId]);
+  }, [segments, id]);
 
   const [showSidebar, setShowSidebar] = useState(false);
 
@@ -108,12 +58,7 @@ export default function Nav({ children }: { children: ReactNode }) {
   return (
     <>
       <button
-        className={`fixed z-20 ${
-          // left align for Editor, right align for other pages
-          segments[0] === "post" && segments.length === 2 && !showSidebar
-            ? "left-5 top-5"
-            : "right-5 top-7"
-        } sm:hidden`}
+        className={`fixed right-5 top-7 z-20 sm:hidden`}
         onClick={() => setShowSidebar(!showSidebar)}
       >
         <Menu width={20} />
@@ -159,7 +104,7 @@ export default function Nav({ children }: { children: ReactNode }) {
             </Link>
           </div>
           <div className="grid gap-1">
-            {tabs.map(({ name, href, isActive, icon }) => (
+            {tabs.map(({ name, href, isActive, icon }: any) => (
               <Link
                 key={name}
                 href={href}
