@@ -18,7 +18,7 @@ export default function Nav({ children }: { children: ReactNode }) {
     if (segments[0] === "site" && id) {
       return [
         {
-          name: "Back to All Sites",
+          name: "Back to Platforms",
           href: "/",
           icon: <ArrowLeft width={18} />,
         },
@@ -71,7 +71,7 @@ export default function Nav({ children }: { children: ReactNode }) {
         <div className="grid gap-2">
           <div className="flex items-center space-x-2 rounded-lg px-2 py-1.5">
             <a
-              href="https://vercel.com/templates/next.js/platforms-starter-kit"
+              href="https://vercel.com"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg p-1.5 hover:bg-stone-200 dark:hover:bg-stone-700"

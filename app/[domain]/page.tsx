@@ -46,8 +46,10 @@ export default async function SiteHomePage({
         <div className="flex items-center space-x-4">
           <h1 className="font-title text-3xl font-bold">{data.name}</h1>
         </div>
-        test
         <p className="text-lg">{data.description}</p>
+        <p className="text-lg">Domain: {domain}</p>
+        <p className="text-lg">Subdomain: {data.subdomain}</p>
+        <p className="text-lg">Collection Mint Address: {data.mintAddress}</p>
       </div>
     </>
   );
